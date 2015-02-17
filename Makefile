@@ -18,11 +18,14 @@ all: compile
 
 compile: $(LIB) package.json
 
-install:
+install: clean
 	npm install -g .
 
 clean:
 	rm -rf lib
+
+publish: all
+	npm publish
 
 test: compile
 	@$(MOCHA) \

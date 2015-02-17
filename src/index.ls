@@ -19,10 +19,11 @@ process-line = (line) ->
   |> reduce (+), 0
   |> duration-to-str
   |> format-line line
-  |> console.log
 
 unless-empty = (fn) ->
   (x) -> unless is-empty x then fn x
 
 process.stdin.pipe split!
-  .on 'data' unless-empty process-line
+  .on 'data' unless-empty console.log . process-line
+
+module.exports = { process-line }

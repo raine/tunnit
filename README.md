@@ -6,7 +6,7 @@ npm install -g tunnit
 
 ## intro
 
-assuming following `work.txt`
+assuming `work.txt`
 
 ```
 20.01.2014 10:00-17:30

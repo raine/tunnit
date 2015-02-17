@@ -29,3 +29,15 @@ describe 'tunnit' (,) ->
 
       10.02.2015 09:15-17:45
       """ |> parse
+
+  it 'handles unparseable lines' ->
+    eq do
+      """
+      LOL
+      09.02.2015 11:00-18:00 7:00
+      """
+
+      """
+      LOL
+      09.02.2015 11:00-18:00
+      """ |> parse

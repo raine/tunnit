@@ -15,8 +15,8 @@ describe 'parse-time-ranges' (,) ->
 describe 'parse-time' (,) ->
   it 'parses time string as date' ->
     date = parse-time '10:30'
-    eq 10, date.getHours!
-    eq 30, date.getMinutes!
+    eq 10, date.get-hours!
+    eq 30, date.get-minutes!
 
 describe 'time-range-to-duration' (,) ->
   it 'converts a time range to a duration in ms' ->

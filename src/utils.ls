@@ -7,10 +7,10 @@ module.exports = _ =
   parse-time: (str) ->
     [ h, m ] = str.split ':'
     d = new Date!
-    d.setHours h
-    d.setMinutes m
-    d.setSeconds 0
-    d.setMilliseconds 0
+    d.set-hours h
+    d.set-minutes m
+    d.set-seconds 0
+    d.set-milliseconds 0
     d
 
   time-range-to-duration: (str) ->

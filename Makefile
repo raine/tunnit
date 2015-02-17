@@ -14,9 +14,9 @@ lib:
 lib/%.js: src/%.ls lib
 	$(LSC) --compile --output lib "$<"
 
-all: build
+all: compile
 
-build: $(LIB) package.json
+compile: $(LIB) package.json
 
 install:
 	npm install -g .
@@ -24,7 +24,7 @@ install:
 clean:
 	rm -rf lib
 
-test: build
+test: compile
 	@$(MOCHA) \
 		--timeout 20000 \
 		--require ./test/lib/globals.ls \

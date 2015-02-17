@@ -24,7 +24,8 @@ install: clean
 clean:
 	rm -rf lib
 
-publish: all
+publish: all test
+	git push --tags origin HEAD:master
 	npm publish
 
 test: compile

@@ -24,7 +24,7 @@ install:
 clean:
 	rm -rf lib
 
-test:
+test: build
 	@$(MOCHA) \
 		--timeout 20000 \
 		--require ./test/lib/globals.ls \

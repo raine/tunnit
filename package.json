@@ -2,6 +2,7 @@
   "name": "tunnit",
   "version": "0.0.2",
   "description": "",
+  "repository": "raine/tunnit",
   "preferGlobal": true,
   "scripts": {
     "test": "make test",

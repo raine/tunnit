@@ -1,6 +1,15 @@
-# TODO: handle non-existent config
+require! { path, fs }
 
-require! path
 home = process.env.HOME
-config-file = path.join home, \.config, \tunnit, \config.js
-module.exports = require config-file
+config-path = path.join home, \.config, \tunnit, \config.js
+
+default-config =
+  handler: I
+
+read-file-or-empty = ->
+  switch fs.exists-sync it
+  | true      => require it
+  | otherwise => {}
+
+config = merge default-config, read-file-or-empty config-path
+module.exports = config

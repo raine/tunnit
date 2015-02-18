@@ -1,5 +1,9 @@
-require! \../lib/process-line
+require! {
+  \../lib/process-line
+  chalk
+}
 
+chalk.enabled = false
 process-lines = map process-line
 parse = join(\\n) . process-lines . split \\n
 

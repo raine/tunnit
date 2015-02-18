@@ -18,6 +18,7 @@
     "mocha": "^2.1.0"
   },
   "dependencies": {
+    "chalk": "^0.5.1",
     "ramda": "^0.10.0",
     "split": "^0.3.3",
     "zpad": "^0.5.0"

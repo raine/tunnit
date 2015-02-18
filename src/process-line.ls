@@ -1,5 +1,6 @@
 require! {
   split
+  chalk
   './utils': {
     parse-time-ranges
     parse-time
@@ -9,7 +10,7 @@ require! {
 }
 
 format-line = (line, dur) -->
-  "#line #dur"
+  "#line #{chalk.bold dur}"
 
 module.exports = (line) ->
   ranges = parse-time-ranges line

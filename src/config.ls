@@ -6,10 +6,10 @@ config-path = path.join home, \.config, \tunnit, \config.js
 default-config =
   handler: I
 
-read-file-or-empty = ->
+safe-require = ->
   switch fs.exists-sync it
   | true      => require it
   | otherwise => {}
 
-config = merge default-config, read-file-or-empty config-path
+config = merge default-config, safe-require config-path
 module.exports = config

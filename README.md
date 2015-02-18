@@ -1,4 +1,4 @@
-# tunnit [![Build Status](https://travis-ci.org/raine/tunnit.svg?branch=master)](https://travis-ci.org/raine/tunnit) [![npm version](https://badge.fury.io/js/tunnit.svg)](http://badge.fury.io/js/tunnit)
+# tunnit [![Build Status](https://travis-ci.org/raine/tunnit.svg?branch=master)](https://travis-ci.org/raine/tunnit) [![npm version](https://badge.fury.io/js/tunnit.svg)](https://www.npmjs.com/package/tunnit)
 ```sh
 npm install -g tunnit
 ```

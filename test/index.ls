@@ -1,11 +1,9 @@
 require! {
-  \../lib/process-line
-  chalk
+  '../lib/process-line'
+  './lib/utils': { map-each-line }
 }
 
-chalk.enabled = false
-process-lines = map process-line
-parse = join(\\n) . process-lines . split \\n
+parse = map-each-line process-line I
 
 describe 'tunnit' (,) ->
   it 'appends durations lines' ->

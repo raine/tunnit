@@ -15,9 +15,9 @@ module.exports = _ =
 
   time-range-to-duration: (str) ->
     [start, end] = str.split /-|–/ |> map _.parse-time
-    end - start
+    (end - start) / 1000 / 60
 
-  duration-to-str: (ms) ->
-    h = ms / 1000 / 60 / 60
+  duration-to-str: (min) ->
+    h = min / 60
     m = ((h % 1) * 60).toFixed 0
     "#{Math.floor h}:#{zpad m}"

@@ -19,17 +19,15 @@ describe 'parse-time' (,) ->
     eq 30, date.get-minutes!
 
 describe 'time-range-to-duration' (,) ->
-  it 'converts a time range to a duration in ms' ->
-    eq 23400000, time-range-to-duration '11:30–18:00'
+  it 'converts a time range to a duration in minutes' ->
+    eq 390, time-range-to-duration '11:30–18:00'
+    eq 5, time-range-to-duration '00:00–00:05'
 
 describe 'duration-to-str' (,) ->
   it 'formats duration to string' ->
-    eq '0:30', duration-to-str time-range-to-duration '6:30-7:00'
-    eq '6:30', duration-to-str time-range-to-duration '11:30-18:00'
-    eq '1:15', duration-to-str time-range-to-duration '12:00-13:15'
+    eq '0:30', duration-to-str 30
+    eq '6:30', duration-to-str 390
+    eq '1:15', duration-to-str 75
 
   it 'zero pads minutes' ->
-    eq '0:05', duration-to-str time-range-to-duration '12:00-12:05'
-
-  it 'rounds to minutes' ->
-    eq '0:05', duration-to-str 300001
+    eq '0:05', duration-to-str 5

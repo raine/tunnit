@@ -28,8 +28,8 @@ you can easily add custom rules and logic
 
 ```js
 module.exports = {
+  // subtract 30 minutes for each day because i had lunch
   handler: function(mins, line) {
-    // subtract 30 minutes for each day because i had lunch
     return mins - 30;
   }
 };

@@ -24,3 +24,18 @@ $ tunnit < work.txt
 23.01.2014 09:30-14:30 5:00
 24.01.2014 08:30-17:00 8:30
 ```
+
+## customization
+
+you can easily add custom rules and logic
+
+#### `~/.config/tunnit/config.js`
+
+```js
+module.exports = {
+  handler: function(mins, line) {
+    // subtract 30 minutes for each day because i had lunch
+    return mins - 30;
+  }
+};
+```

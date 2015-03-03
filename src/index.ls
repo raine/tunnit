@@ -7,4 +7,4 @@ require! {
 }
 
 process.stdin.pipe split!
-  .on 'data' console.log . process-line config.handler, _
+  .on 'data' console.log . process-line config, _

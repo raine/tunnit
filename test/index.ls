@@ -3,7 +3,10 @@ require! {
   './lib/utils': { map-each-line }
 }
 
-parse = map-each-line process-line I
+opts =
+  handler: I
+
+parse = map-each-line process-line opts
 
 describe 'tunnit' (,) ->
   it 'appends durations lines' ->

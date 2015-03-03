@@ -12,13 +12,13 @@ require! {
 format-line = (line, dur) -->
   "#line #{chalk.bold dur}"
 
-module.exports = (handler, line) -->
+module.exports = (opts, line) -->
   ranges = parse-time-ranges line
   return line unless ranges # Maybe?
   
   ranges
   |> map time-range-to-duration
   |> reduce (+), 0
-  |> handler _, line
+  |> opts.handler _, line
   |> duration-to-str
   |> format-line line

@@ -1,9 +1,11 @@
 require! 'ramda': {map}
+require! 'data.maybe': Maybe
 require! zpad
 
 module.exports = _ =
   parse-time-ranges: (str) ->
-    str.match /\d\d:\d\d(-|–)\d\d:\d\d/g
+    Maybe.from-nullable <|
+      str.match /\d\d:\d\d(-|–)\d\d:\d\d/g
 
   parse-time: (str) ->
     [ h, m ] = str.split ':'

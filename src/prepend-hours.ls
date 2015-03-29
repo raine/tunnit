@@ -6,12 +6,10 @@ format-line = (line, dur) -->
   "#line #{chalk.bold dur}"
 
 module.exports = prepend-hours = (opts, line) -->
-  ranges = parse-time-ranges line
-  return "#line" unless ranges # Maybe?
-  
-  ranges
-  |> map time-range-to-duration
-  |> reduce (+), 0
-  |> opts.handler _, line
-  |> duration-to-str
-  |> format-line line
+  parse-time-ranges line
+  |> map map time-range-to-duration
+  |> map reduce (+), 0
+  |> map opts.handler _, line
+  |> map duration-to-str
+  |> map format-line line
+  |> -> it.get-or-else line

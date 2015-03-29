@@ -1,9 +1,23 @@
 require! '../src/utils': {parse-time-ranges, parse-time, time-range-to-duration, duration-to-str}
 
 describe 'parse-time-ranges' (,) ->
+  it 'returns Just [String] if it matches time ranges' ->
+    str = '09.02.2015 11:00-18:00 19:10-20:00'
+    ok <| parse-time-ranges str .is-just
+
+  it "returns Nothing if it doesn't match any time ranges" ->
+    str = 'FOO'
+    ok <| parse-time-ranges str .is-nothing
+
   it 'parses multiple time ranges' ->
     str = '09.02.2015 11:00-18:00 19:10-20:00'
-    deep-eq <[ 11:00-18:00 19:10-20:00 ]>, parse-time-ranges str
+    parse-time-ranges str .cata do
+      Just: deep-eq <[ 11:00-18:00 19:10-20:00 ]>, _
+
+  it 'parses a single time range' ->
+    str = '01.01.2011 09:00-17:00'
+    parse-time-ranges str .cata do
+      Just: deep-eq <[ 09:00-17:00 ]>, _
 
 describe 'parse-time' (,) ->
   it 'parses time string as date' ->

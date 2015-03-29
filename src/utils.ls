@@ -21,5 +21,5 @@ module.exports = _ =
 
   duration-to-str: (min) ->
     h = min / 60
-    m = ((h % 1) * 60).toFixed 0
+    m = ((h % 1) * 60).to-fixed 0
     "#{Math.floor h}:#{zpad m}"

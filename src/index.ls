@@ -1,10 +1,3 @@
-global <<< require 'ramda'
-
-require! {
-  split
-  './config'
-  './process-line'
-}
-
-process.stdin.pipe split!
-  .on 'data' console.log . process-line config, _
+require './cli' <| do
+  stdin  : process.stdin
+  stdout : process.stdout

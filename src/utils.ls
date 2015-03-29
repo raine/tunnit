@@ -1,3 +1,4 @@
+require! 'ramda': {map}
 require! zpad
 
 module.exports = _ =

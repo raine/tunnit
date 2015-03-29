@@ -1,10 +1,11 @@
-require! { path, fs }
+require! 'ramda': {identity, merge}
+require! {path, fs}
 
 home = process.env.HOME
 config-path = path.join home, \.config, \tunnit, \config.js
 
 default-config =
-  handler: I
+  handler: identity
 
 safe-require = ->
   switch fs.exists-sync it

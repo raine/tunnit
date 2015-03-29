@@ -1,12 +1,9 @@
-require! {
-  '../lib/process-line'
-  './lib/utils': { map-each-line }
-}
+require! '../lib/prepend-hours'
+require! './lib/utils': {map-each-line}
 
-opts =
-  handler: I
+opts = handler: identity
 
-parse = map-each-line process-line opts
+parse = map-each-line prepend-hours opts
 
 describe 'tunnit' (,) ->
   it 'appends durations lines' ->

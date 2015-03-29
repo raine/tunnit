@@ -13,13 +13,11 @@
 // $ echo "24.01.2014 08:30-17:00 (+60min)" | tunnit
 // 24.01.2014 08:30-17:00 9:00
 
-
-var LUNCH = 30;
 var PARENS_RE = /\s?\(([+-]\d+)min*\)/;
 
 module.exports = {
   // Example input:  510, "24.01.2014 08:30-17:00 (+60min)"
-  // Example output: 510 - 30 + 60 => 540
+  // Example output: 510 + 60 => 570
   adjust: function(mins, line) {
     var time = (function() {
       var m;
@@ -28,11 +26,11 @@ module.exports = {
               : 0;
     })();
 
-    return mins - LUNCH + time;
+    return mins + time;
   },
 
-  // Example input:  "24.01.2014 08:30-17:00 9:00 (+60min)"
-  // Example output: "24.01.2014 08:30-17:00 9:00"
+  // Example input:  "24.01.2014 08:30-17:00 (+60min) 9:30"
+  // Example output: "24.01.2014 08:30-17:00 9:30"
   mapOutputLine: function(line) {
     return line.replace(PARENS_RE, '');
   }

@@ -9,12 +9,11 @@ module.exports = _ =
 
   parse-time: (str) ->
     [ h, m ] = str.split ':'
-    d = new Date!
-    d.set-hours h
-    d.set-minutes m
-    d.set-seconds 0
-    d.set-milliseconds 0
-    d
+    new Date!
+      ..set-hours h
+      ..set-minutes m
+      ..set-seconds 0
+      ..set-milliseconds 0
 
   time-range-to-duration: (str) ->
     [start, end] = str.split /-|–/ |> map _.parse-time

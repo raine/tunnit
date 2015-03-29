@@ -44,3 +44,5 @@ module.exports = {
   }
 };
 ```
+
+see another [example config](https://github.com/raine/tunnit/blob/master/tunnit.example.js)

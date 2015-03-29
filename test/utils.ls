@@ -1,16 +1,9 @@
-require! {
-  '../src/utils': {
-    parse-time-ranges
-    parse-time
-    time-range-to-duration
-    duration-to-str
-  }
-}
+require! '../src/utils': {parse-time-ranges, parse-time, time-range-to-duration, duration-to-str}
 
 describe 'parse-time-ranges' (,) ->
   it 'parses multiple time ranges' ->
     str = '09.02.2015 11:00-18:00 19:10-20:00'
-    deep-eq [ '11:00-18:00', '19:10-20:00' ], parse-time-ranges str
+    deep-eq <[ 11:00-18:00 19:10-20:00 ]>, parse-time-ranges str
 
 describe 'parse-time' (,) ->
   it 'parses time string as date' ->

@@ -5,6 +5,9 @@ LIB = $(SRC:src/%.ls=lib/%.js)
 
 MOCHA = ./node_modules/.bin/mocha
 LSC = node_modules/.bin/lsc
+REPORTER ?= dot
+GREP ?= ".*"
+MOCHA_ARGS = --grep $(GREP)
 
 default: all
 
@@ -28,9 +31,8 @@ publish: all test
 	git push --tags origin HEAD:master
 	npm publish
 
-test: compile
-	@$(MOCHA) \
-		--timeout 20000 \
-		--require ./test/lib/globals.ls \
-		--compilers ls:LiveScript \
-		--reporter dot
+test:
+	@$(MOCHA) $(MOCHA_ARGS) --reporter $(REPORTER)
+
+test-w:
+	@$(MOCHA) $(MOCHA_ARGS) --reporter min --watch

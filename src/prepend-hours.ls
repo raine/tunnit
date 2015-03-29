@@ -19,4 +19,5 @@ module.exports = prepend-hours = (opts, line) -->
     |> map opts.adjust _, line
     |> map duration-to-str
     |> map format-line line
+    |> map opts.map-output-line
     |> -> it.get-or-else line

@@ -27,7 +27,7 @@ $ tunnit < work.txt
 
 you can easily add custom rules and logic
 
-#### `~/.config/tunnit/config.js`
+#### `~/.config/tunnit`
 
 ```js
 module.exports = {

@@ -2,7 +2,7 @@ require! 'ramda': {identity, merge}
 require! {path, fs}
 
 home = process.env.HOME
-config-path = path.join home, \.config, \tunnit, \config.js
+config-path = path.join home, \.config, \tunnit.js
 
 default-config =
   adjust: identity

@@ -1,9 +1,7 @@
 require! '../lib/prepend-hours'
 require! './lib/utils': {map-each-line}
 
-opts = adjust: identity
-
-parse = map-each-line prepend-hours opts
+parse = map-each-line prepend-hours {}
 
 describe 'prepend-hours' (,) ->
   it 'appends durations lines' ->

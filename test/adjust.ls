@@ -14,7 +14,3 @@ describe \adjust (,) ->
       it
 
     prepend-hours opts, line
-
-  it 'is identity fn by default' ->
-    line = '09.02.2015 00:00-00:30'
-    eq "#line 0:30", prepend-hours {}, line

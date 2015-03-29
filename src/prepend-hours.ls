@@ -9,7 +9,7 @@ module.exports = prepend-hours = (opts, line) -->
   parse-time-ranges line
   |> map map time-range-to-duration
   |> map reduce (+), 0
-  |> map opts.handler _, line
+  |> map opts.adjust _, line
   |> map duration-to-str
   |> map format-line line
   |> -> it.get-or-else line

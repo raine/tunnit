@@ -5,7 +5,7 @@ home = process.env.HOME
 config-path = path.join home, \.config, \tunnit, \config.js
 
 default-config =
-  handler: identity
+  adjust: identity
 
 safe-require = ->
   switch fs.exists-sync it

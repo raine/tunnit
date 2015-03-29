@@ -1,7 +1,7 @@
 require! '../lib/prepend-hours'
 require! './lib/utils': {map-each-line}
 
-opts = handler: identity
+opts = adjust: identity
 
 parse = map-each-line prepend-hours opts
 

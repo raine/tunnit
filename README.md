@@ -32,7 +32,7 @@ you can easily add custom rules and logic
 ```js
 module.exports = {
   // you can parse `line` here and adjust `mins` based on that
-  handler: function(mins, line) {
+  adjust: function(mins, line) {
     // subtract 30 minutes for each day because i had lunch
     return mins - 30;
   }

@@ -5,7 +5,7 @@ opts = handler: identity
 
 parse = map-each-line prepend-hours opts
 
-describe 'tunnit' (,) ->
+describe 'prepend-hours' (,) ->
   it 'appends durations lines' ->
     eq do
       """

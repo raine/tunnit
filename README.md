@@ -31,14 +31,14 @@ you can easily add custom rules and logic
 
 ```js
 module.exports = {
-  // :: adjust(mins: Number, line: String): Number
+  // :: adjust(Number mins, String line) -> Number
   adjust: function(mins, line) {
     // you can parse `line` here and adjust `mins` based on that.
     // subtract 30 minutes for each day because i had lunch
     return mins - 30;
   },
 
-  // :: mapOutputLine(line: String): String
+  // :: mapOutputLine(String line) -> String
   mapOutputLine: function(line) {
     // make changes to line right before it is printed.
     // line contains duration at this point
